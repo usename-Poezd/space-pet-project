@@ -1,0 +1,132 @@
+
+#wrapper{
+    text-align:center;
+}
+
+.item_wrapper{
+    width:300px;
+    margin:20px;
+    color: white;
+    /*background: linear-gradient(90deg, rgb(33, 33, 33) 0%, rgba(255, 0, 0, 0.64) 32%);*/
+    background: radial-gradient(circle, rgba(233,68,68,1) 0%, rgba(105,105,105,1) 100%);
+    display: inline-block;
+    cursor: pointer;
+
+}
+div.item_wrapper:hover{
+    box-shadow: 0 0 30px rgba(253, 0, 0, 0.5);
+
+}
+/*.item_wrapper_activ{*/
+/*    width:300px;*/
+/*    margin:10px;*/
+/*    color: white;*/
+/*    !*background: linear-gradient(90deg, rgb(33, 33, 33) 0%, rgba(255, 0, 0, 0.64) 32%);*!*/
+/*    background: radial-gradient(circle, rgba(233,68,68,1) 0%, rgba(105,105,105,1) 100%);*/
+/*    display: inline-block;*/
+/*}*/
+
+.item_text_name{
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.item_text{
+    padding:10px;
+}
+
+
+.item_img{
+    width: 100%;
+}
+
+.window_modal_close{
+    display: none;
+}
+.modal_window_wrapper_close{
+    display: none;
+}
+
+.window_modal_wrapper_show{
+    display: block;
+    position: fixed;
+    height:100vh;
+    width: 100%;
+    top:0;
+    left: 0;
+    background-color: rgba(83, 83, 83, 0.63);
+}
+
+.window_modal_show{
+    display: block;
+    position: fixed;
+    min-height: calc(100vh - 10%);
+    width: 60%;
+    top:3%;
+    left: 20%;
+    background: radial-gradient(circle, rgb(43, 79, 255) 0%, rgb(191, 229, 229) 100%);
+    overflow:auto;
+    height: 95%;
+    overflow: auto; // или scroll
+
+}
+.button_close{
+    font-size: 30px;
+    text-align: right;
+    cursor: pointer;
+    padding:3px 15px;
+    background-color: #4e4e4e;
+    color: #f0f8ff;
+    margin-bottom: 10px;
+}
+#modal_img{
+    width: 30%;
+    padding-left: 3px;
+
+}
+
+#modal_name{
+    display: inline-block;
+    font-size: 30px;
+    padding: 5px;
+}
+#modal_text{
+    white-space: pre-line;
+    padding: 5px;
+    margin: 5px;
+    background-color: #2d3550;
+    color: white;
+    border-radius: 5px;
+}
+#modal_date{
+    padding: 5px;
+
+}
+#modal_city{
+    padding: 5px;
+}
+.modal_info{
+    margin: 1px 0 5px 10px;
+    width: 65%;
+    color: white;
+    background-color: #494949;
+    padding: 2px;
+    border-radius: 5px;
+}
+.modal_city{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+.modal_name{
+    background-color: black;
+    color: white;
+
+}
+.modal_date{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
