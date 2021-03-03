@@ -5,9 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/people.css">
     <link rel="stylesheet" href="core/style.css">
-    <title>Люди</title>
+    <link rel="stylesheet" href="core/modal.css">
+    <title>Истории</title>
 </head>
 <body>
 <div class="header flex items-start pr-3">
@@ -38,7 +38,10 @@
 </div>
 
 <div id="wrapper">
-    <h1 class="py-2" style="font-family: sans-serif">Люди</h1>
+    <h1 class="py-2" style="font-family: sans-serif">Истории</h1>
+    <div class="flex flex-wrap justify-center story_list">
+
+    </div>
 </div>
 
 <div id = "modal_window_wrapper" class = 'window_modal_close'>
@@ -46,14 +49,11 @@
 </div>
 <div id = "modal_window" class = 'window_modal_close'>
     <div id ="button_close_modal" class="button_close">✖</div>
-    <img id="modal_img" alt="foto">
-    <div class="modal_info">
-        <div class="modal_name"></div>
-        <div id="modal_name"></div>
-        <div class="modal_city">Место рождения</div>
-        <div id="modal_city"></div>
-        <div class="modal_date">Дата рождения</div>
-        <div id="modal_date"></div>
+    <div class="flex items-center">
+        <img id="modal_img" alt="foto">
+        <div class="modal_info">
+            <div id="modal_name"></div>
+        </div>
     </div>
     <div id="modal_text"></div>
 </div>
@@ -64,8 +64,8 @@
     <div>г. Тула</div>
 </div>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="data/people_state.js"></script>
+<script src="data/stories_state.js"></script>
 <script src="core/index.js"></script>
-<script src="js/people.js"></script>
+<script src="core/modal.js"></script>
 </body>
 </html>
