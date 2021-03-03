@@ -66,35 +66,63 @@ const Dropdowns = () => {
 const Render = () => {
     const headTeg = document.getElementById('wrapper');
 
-    state = stateData.data;
-    const divHeader = document.createElement('div');
-    divHeader.classList.add("flex", "flex-wrap", "justify-center");
-    state.forEach(item=>{
-        const div = document.createElement('div');
-        div.className = 'item_wrapper';
-        div.id = item.id;
-        const img = document.createElement('img');
-        img.src = item.foto;
-        img.className='item_img';
-        img.id = item.id;
+    const state = stateData.data;
+    const type = stateData.type;
 
-        const divTextName = document.createElement('div');
-        divTextName.className = 'item_text_name';
-        divTextName.textContent = item.name;
-        divTextName.id = item.id;
+    switch (type) {
+        case "stories":
+            const mainDiv = document.createElement("div");
+            mainDiv.classList.add("flex", "flex-wrap", "justify-center", "story_list");
 
-        const divText = document.createElement('div');
-        divText.className = 'item_text';
-        divText.textContent = item.present;
-        divText.id = item.id;
+            state.forEach( item => {
+                mainDiv.innerHTML += `
+                    <div class="story_list_item">
+                        <div class="story_photo">
+                            <img src="${item.foto}" alt="" class="img-fluid">
+                        </div>
+                        <div class="story_text">
+                            <p>${item.present}</p>
+                            <span class="btn btn-blue modal_trigger" id="${item.id}">Читать</span>
+                        </div>
+                    </div>
+                `
+            });
 
-        div.appendChild(img);
-        div.appendChild(divTextName);
-        div.appendChild(divText);
+            headTeg.append(mainDiv);
+            break;
+        default:
+            const divHeader = document.createElement('div');
 
-        divHeader.appendChild(div);
-    });
-    headTeg.appendChild(divHeader);
+            divHeader.classList.add("flex", "flex-wrap", "justify-center");
+            state.forEach(item=>{
+                const div = document.createElement('div');
+                div.className = 'item_wrapper';
+                div.id = item.id;
+                const img = document.createElement('img');
+                img.src = item.foto;
+                img.className='item_img';
+                img.id = item.id;
+
+                const divTextName = document.createElement('div');
+                divTextName.className = 'item_text_name';
+                divTextName.textContent = item.name;
+                divTextName.id = item.id;
+
+                const divText = document.createElement('div');
+                divText.className = 'item_text';
+                divText.textContent = item.present;
+                divText.id = item.id;
+
+                div.appendChild(img);
+                div.appendChild(divTextName);
+                div.appendChild(divText);
+
+                divHeader.appendChild(div);
+            });
+            headTeg.appendChild(divHeader);
+    }
+
+
 };
 
 const CoreInit = () => {

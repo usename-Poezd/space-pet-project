@@ -1,4 +1,7 @@
-document.querySelectorAll('.item_wrapper').forEach(item=>{
+const state = stateData.data;
+const type = stateData.type;
+
+const openModal = (item) => {
     item.addEventListener('click',(e)=>{
 
         document.getElementById('modal_window').className = 'window_modal_show';
@@ -11,31 +14,33 @@ document.querySelectorAll('.item_wrapper').forEach(item=>{
         const modal_info = document.querySelector(".modal_info");
 
         //make data adding automatically
-        itemClick.data.map(({title, value}) => {
-            const titleDiv = document.createElement("div");
-            titleDiv.classList.add("modal_city");
-            titleDiv.classList.add("p-1");
-            titleDiv.textContent = title;
+        if (itemClick.data) {
+            itemClick.data.map(({title, value}) => {
+                const titleDiv = document.createElement("div");
+                titleDiv.classList.add("modal_city");
+                titleDiv.classList.add("p-1");
+                titleDiv.textContent = title;
 
 
 
-            const valueDiv = document.createElement("div");
-            valueDiv.classList.add("p-1");
-            valueDiv.textContent = value;
+                const valueDiv = document.createElement("div");
+                valueDiv.classList.add("p-1");
+                valueDiv.textContent = value;
 
 
-            modal_info.append(titleDiv);
-            modal_info.append(valueDiv);
-        });
+                modal_info.append(titleDiv);
+                modal_info.append(valueDiv);
+            });
+        }
 
         modal_img.src = itemClick.foto;
         modal_name.textContent = itemClick.name;
 
 
-        modal_text.textContent =  itemClick.description;
+        modal_text.innerHTML =  itemClick.description;
 
     });
-});
+};
 
 const closeModal = () => {
     document.getElementById('modal_window').className='window_modal_close';
@@ -46,6 +51,11 @@ const closeModal = () => {
     const modal_info = document.querySelector(".modal_info");
     modal_info.innerHTML = "<div id=\"modal_name\"></div>"
 };
+
+document.querySelectorAll('.item_wrapper').forEach(openModal);
+
+document.querySelectorAll('.modal_trigger').forEach(openModal);
+
 
 document.getElementById('button_close_modal').addEventListener('click',closeModal);
 
