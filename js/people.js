@@ -1,3 +1,5 @@
+const state = stateData.data;
+
 document.querySelectorAll('.item_wrapper').forEach(item=>{
     item.addEventListener('click',(e)=>{
         document.getElementById('modal_window').className = 'window_modal_show';
